@@ -168,6 +168,10 @@
                 if (job.match_details.is_software_dev) tags.push('<span class="tag software">Software/IT</span>');
                 if (job.match_details.is_math_related) tags.push('<span class="tag math">Math/Data</span>');
                 tags.push(`<span class="tag source">${job.source}</span>`);
+                if (job.location_match) {
+                    const locLabels = {linz_area: 'Linz area', austria: 'Austria', remote_worldwide: 'Remote (worldwide)', remote_eu: 'Remote (EU)', remote: 'Remote'};
+                    tags.push(`<span class="tag source">${locLabels[job.location_match] || job.location_match}</span>`);
+                }
 
                 const url = job.url.startsWith('http') ? job.url : `https://www.tgw-group.com${job.url}`;
 

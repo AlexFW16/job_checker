@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-04-03T21:13:11.932484",
-  "total_jobs_found": 165,
-  "matching_jobs": 7,
+  "check_date": "2026-04-03T21:41:38.201186",
+  "total_jobs_found": 265,
+  "matching_jobs": 9,
   "results": [
     {
       "title": "Teamlead Software Development Simulation",
@@ -16,7 +16,8 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Data Engineer",
@@ -31,7 +32,24 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Graphic Designer",
+      "location": "Marchtrenk, Austria",
+      "country": "Austria",
+      "category": "Internal Services",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/graphic-designer-764/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": false,
+        "is_math_related": true,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Simulation Engineer",
@@ -46,7 +64,8 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Software Developer Simulation",
@@ -61,7 +80,8 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Global Supplier Quality Engineer",
@@ -76,7 +96,8 @@
         "is_software_dev": true,
         "is_math_related": false,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Data Engineer - Focus Resource Utilization",
@@ -91,7 +112,8 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Senior Software Developer C# - Focus Simulation",
@@ -106,7 +128,24 @@
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
-      }
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Masterarbeit",
+      "location": "Hagenberg, Austria",
+      "country": "Austria",
+      "category": "Research",
+      "experience_level": "",
+      "source": "scch",
+      "url": "https://www.scch.at/karriere/offene-positionen/detail/-80",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
     }
   ]
 }

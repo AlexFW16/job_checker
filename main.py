@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -6,12 +7,48 @@ from pathlib import Path
 from config_loader import load_config
 from scrapers.base import Job
 from scrapers.tgw import TGWScraper
+from scrapers.companies import (
+    SCCHScraper,
+    RISCRScraper,
+    SALScraper,
+    AITScraper,
+    AVLLScraper,
+    KEBAScraper,
+    InfineonScraper,
+    PrimetalsScraper,
+    LAMResearchScraper,
+    SiemensScraper,
+    SynopsysScraper,
+    VoestalpineScraper,
+)
+from scrapers.karriere_at import KarriereAtScraper
 
 SCRAPERS = {
     "tgw": TGWScraper,
+    "scch": SCCHScraper,
+    "risc": RISCRScraper,
+    "sal": SALScraper,
+    "ait": AITScraper,
+    "avl": AVLLScraper,
+    "keba": KEBAScraper,
+    "infineon": InfineonScraper,
+    "primetals": PrimetalsScraper,
+    "lam": LAMResearchScraper,
+    "siemens": SiemensScraper,
+    "synopsys": SynopsysScraper,
+    "voestalpine": VoestalpineScraper,
+    "karriere_at": KarriereAtScraper,
 }
 
 OUTPUT_FILE = "results.json"
+
+LINZ_AREA_CITIES = [
+    "linz", "hagenberg", "marchtrenk", "wels", "steyr",
+    "pasching", "traun", "leonding", "ansfelden", "eferding",
+    "gallneukirchen", "enghagen", "puchenau", "ottensheim",
+    "alham", "kirchschlag", "walding", "altheim",
+    "oberoesterreich", "oberösterreich",
+]
 
 
 def get_scraper_instances(scraper_names: list[str]) -> list:
@@ -24,9 +61,9 @@ def get_scraper_instances(scraper_names: list[str]) -> list:
     return instances
 
 
-def fetch_all_jobs(scrappers: list) -> list[Job]:
+def fetch_all_jobs(scrapers: list) -> list[Job]:
     all_jobs = []
-    for scraper in scrappers:
+    for scraper in scrapers:
         print(f"  Fetching from {scraper.name}...")
         try:
             jobs = scraper.fetch_jobs()
@@ -57,17 +94,27 @@ def matches_keywords(job: Job, config: dict) -> dict:
     return matches
 
 
-def matches_location(job: Job, filters: dict) -> bool:
-    allowed_countries = [c.lower() for c in filters.get("countries", [])]
-    allow_remote = filters.get("remote", False)
+def matches_location(job: Job, filters: dict) -> tuple[bool, str]:
+    location_text = f"{job.location} {job.country}".lower()
 
-    if allow_remote and "remote" in job.location.lower():
-        return True
+    allow_remote_worldwide = filters.get("remote_worldwide", False)
+    allow_remote_eu = filters.get("remote_eu", False)
+    allowed_countries = [c.lower() for c in filters.get("countries", [])]
+
+    if allow_remote_worldwide and re.search(r"\bremote\b", location_text):
+        if re.search(r"(worldwide|global|anywhere|taiwan|asia)", location_text):
+            return True, "remote_worldwide"
+        return True, "remote"
+
+    if allow_remote_eu and re.search(r"\bremote\b", location_text):
+        return True, "remote_eu"
 
     if job.country.lower() in allowed_countries:
-        return True
+        if any(city in location_text for city in LINZ_AREA_CITIES):
+            return True, "linz_area"
+        return True, "austria"
 
-    return False
+    return False, ""
 
 
 def filter_jobs(jobs: list[Job], config: dict) -> list[dict]:
@@ -75,7 +122,8 @@ def filter_jobs(jobs: list[Job], config: dict) -> list[dict]:
     results = []
 
     for job in jobs:
-        if not matches_location(job, filters):
+        location_match, location_reason = matches_location(job, filters)
+        if not location_match:
             continue
 
         match_info = matches_keywords(job, config)
@@ -90,6 +138,7 @@ def filter_jobs(jobs: list[Job], config: dict) -> list[dict]:
                     "source": job.source,
                     "url": job.url,
                     "match_details": match_info,
+                    "location_match": location_reason,
                 }
             )
 
@@ -115,7 +164,7 @@ def save_results(results: list[dict], total: int, output_path: str) -> dict:
 def print_summary(output: dict):
     print()
     print("=" * 60)
-    print("TGW Job Checker Results")
+    print("Job Checker Results")
     print("=" * 60)
     print(f"Check date: {output['check_date']}")
     print(f"Total jobs found: {output['total_jobs_found']}")
@@ -134,6 +183,8 @@ def print_summary(output: dict):
             print(f"   Location: {loc}, {country}")
             print(f"   Category: {job['category']}")
             print(f"   Experience: {job['experience_level']}")
+            print(f"   Source: {job['source']}")
+            print(f"   Location match: {job['location_match']}")
             details = job["match_details"]
             reasons = []
             if details["is_junior_level"]:
