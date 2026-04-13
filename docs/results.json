@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-04-06T09:09:51.660352",
-  "total_jobs_found": 265,
-  "matching_jobs": 9,
+  "check_date": "2026-04-13T09:55:38.318947",
+  "total_jobs_found": 269,
+  "matching_jobs": 7,
   "results": [
     {
       "title": "Teamlead Software Development Simulation",
@@ -46,38 +46,6 @@
       "match_details": {
         "is_junior_level": true,
         "is_software_dev": false,
-        "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Simulation Engineer",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Development / Software / IT",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/simulation-engineer-666/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Software Developer Simulation",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Development / Software / IT",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/software-developer-simulation-665/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
       },
