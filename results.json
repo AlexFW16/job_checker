@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-04-20T09:58:37.464681",
-  "total_jobs_found": 260,
-  "matching_jobs": 7,
+  "check_date": "2026-04-27T10:16:13.022351",
+  "total_jobs_found": 182,
+  "matching_jobs": 5,
   "results": [
     {
       "title": "Teamlead Software Development Simulation",
@@ -46,38 +46,6 @@
       "match_details": {
         "is_junior_level": true,
         "is_software_dev": false,
-        "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Global Supplier Quality Engineer",
-      "location": "Marchtrenk, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/global-supplier-quality-engineer-571/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Data Engineer - Focus Resource Utilization",
-      "location": "Marchtrenk, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/data-engineer-focus-resource-utilization-451/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
       },
