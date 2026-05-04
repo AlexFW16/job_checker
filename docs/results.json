@@ -1,6 +1,6 @@
 {
-  "check_date": "2026-04-27T10:16:13.022351",
-  "total_jobs_found": 182,
+  "check_date": "2026-05-04T10:14:02.441632",
+  "total_jobs_found": 179,
   "matching_jobs": 5,
   "results": [
     {
@@ -56,11 +56,11 @@
       "location": "Wels, Austria",
       "country": "Austria",
       "category": "Development / Software / IT",
-      "experience_level": "Recent Graduates",
+      "experience_level": "Experienced Professionals",
       "source": "tgw",
       "url": "https://www.tgw-group.com/en/career/jobs/detail/senior-software-developer-c-focus-simulation-408/",
       "match_details": {
-        "is_junior_level": true,
+        "is_junior_level": false,
         "is_software_dev": true,
         "is_math_related": true,
         "is_relevant": true
