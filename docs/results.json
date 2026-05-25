@@ -1,8 +1,40 @@
 {
-  "check_date": "2026-05-18T11:44:22.962155",
-  "total_jobs_found": 178,
-  "matching_jobs": 5,
+  "check_date": "2026-05-25T11:53:13.548220",
+  "total_jobs_found": 184,
+  "matching_jobs": 6,
   "results": [
+    {
+      "title": "Master thesis - Database for test data",
+      "location": "Wels, Austria",
+      "country": "Austria",
+      "category": "Development / Software / IT",
+      "experience_level": "Students",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/master-thesis-database-for-test-data-864/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": true,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Electrical engineer for international construction site",
+      "location": "Wels, Austria",
+      "country": "Austria",
+      "category": "Installation / Commissioning",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/electrical-engineer-for-international-construction-site-682/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
     {
       "title": "Teamlead Software Development Simulation",
       "location": "Wels, Austria",
@@ -30,22 +62,6 @@
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
-        "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Graphic Designer",
-      "location": "Marchtrenk, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/graphic-designer-764/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
         "is_math_related": true,
         "is_relevant": true
       },
