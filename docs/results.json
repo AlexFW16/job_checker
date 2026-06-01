@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-05-25T11:53:13.548220",
-  "total_jobs_found": 184,
-  "matching_jobs": 6,
+  "check_date": "2026-06-01T13:39:36.633843",
+  "total_jobs_found": 176,
+  "matching_jobs": 5,
   "results": [
     {
       "title": "Master thesis - Database for test data",
@@ -43,22 +43,6 @@
       "experience_level": "Experienced Professionals",
       "source": "tgw",
       "url": "https://www.tgw-group.com/en/career/jobs/detail/teamlead-software-development-simulation-779/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Data Engineer",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Development / Software / IT",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/data-engineer-611/",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
