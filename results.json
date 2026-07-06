@@ -1,6 +1,6 @@
 {
-  "check_date": "2026-06-29T12:35:28.465054",
-  "total_jobs_found": 187,
+  "check_date": "2026-07-06T12:04:39.479547",
+  "total_jobs_found": 175,
   "matching_jobs": 5,
   "results": [
     {
@@ -68,13 +68,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Masterarbeit",
+      "title": "Masterarbeit (w/m/x)",
       "location": "Hagenberg, Austria",
       "country": "Austria",
       "category": "Research",
       "experience_level": "",
       "source": "scch",
-      "url": "https://www.scch.at/karriere/offene-positionen/detail/-80",
+      "url": "https://www.scch.at/karriere/offene-positionen/detail/-86",
       "match_details": {
         "is_junior_level": true,
         "is_software_dev": true,
