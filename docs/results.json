@@ -1,8 +1,40 @@
 {
-  "check_date": "2026-07-13T11:10:37.940351",
-  "total_jobs_found": 171,
-  "matching_jobs": 4,
+  "check_date": "2026-07-20T10:51:33.494282",
+  "total_jobs_found": 185,
+  "matching_jobs": 5,
   "results": [
+    {
+      "title": "Apprentice Trainer Controls",
+      "location": "Wels, Austria",
+      "country": "Austria",
+      "category": "Installation / Commissioning",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/apprentice-trainer-controls-746/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Sales Engineer Retrofit",
+      "location": "Marchtrenk, Austria",
+      "country": "Austria",
+      "category": "Sales",
+      "experience_level": "Recent Graduates",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/sales-engineer-retrofit-956/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
     {
       "title": "Master thesis - Database for test data",
       "location": "Wels, Austria",
@@ -43,22 +75,6 @@
       "experience_level": "Experienced Professionals",
       "source": "tgw",
       "url": "https://www.tgw-group.com/en/career/jobs/detail/electrical-engineer-for-international-construction-site-682/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Masterarbeit (w/m/x)",
-      "location": "Hagenberg, Austria",
-      "country": "Austria",
-      "category": "Research",
-      "experience_level": "",
-      "source": "scch",
-      "url": "https://www.scch.at/karriere/offene-positionen/detail/-86",
       "match_details": {
         "is_junior_level": true,
         "is_software_dev": true,
