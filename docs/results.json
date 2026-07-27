@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-07-20T10:51:33.494282",
-  "total_jobs_found": 185,
-  "matching_jobs": 5,
+  "check_date": "2026-07-27T11:20:09.312731",
+  "total_jobs_found": 188,
+  "matching_jobs": 4,
   "results": [
     {
       "title": "Apprentice Trainer Controls",
@@ -63,22 +63,6 @@
         "is_junior_level": false,
         "is_software_dev": true,
         "is_math_related": true,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Electrical engineer for international construction site",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Installation / Commissioning",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/electrical-engineer-for-international-construction-site-682/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": true,
-        "is_math_related": false,
         "is_relevant": true
       },
       "location_match": "linz_area"
