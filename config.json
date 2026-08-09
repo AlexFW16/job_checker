@@ -87,7 +87,8 @@
   "filters": {
     "countries": ["Austria"],
     "remote_worldwide": true,
-    "remote_eu": true
+    "remote_eu": true,
+    "allow_eu_nearby": true
   },
   "scrapers": [
     "tgw",

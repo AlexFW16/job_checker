@@ -50,6 +50,12 @@ LINZ_AREA_CITIES = [
     "oberoesterreich", "oberösterreich",
 ]
 
+EU_NEARBY_CITIES = [
+    "munich", "münchen", "passau", "salzburg", "pocking",
+    "burghausen", "freilassing", "altötting", "traunstein",
+    "neuburg", "ingolstadt",
+]
+
 
 def get_scraper_instances(scraper_names: list[str]) -> list:
     instances = []
@@ -78,18 +84,25 @@ def matches_keywords(job: Job, config: dict) -> dict:
     keywords = config["keywords"]
     text = f"{job.title} {job.category} {job.experience_level}".lower()
 
-    matches = {
-        "is_junior_level": any(kw in text for kw in keywords["junior_level"]),
-        "is_software_dev": any(kw in text for kw in keywords["software_dev"]),
-        "is_math_related": any(kw in text for kw in keywords["mathematics"]),
+    groups = {
+        "is_junior_level": keywords["junior_level"],
+        "is_software_dev": keywords["software_dev"],
+        "is_math_related": keywords["mathematics"],
     }
+    matched_keywords = [
+        kw
+        for group_kws in groups.values()
+        for kw in group_kws
+        if kw in text
+    ]
+    matched_keywords = list(dict.fromkeys(matched_keywords))
 
-    matches["is_relevant"] = (
-        matches["is_software_dev"]
-        and (matches["is_junior_level"] or matches["is_math_related"])
-    ) or (
-        matches["is_math_related"] and matches["is_junior_level"]
-    )
+    matches: dict = {key: bool(any(kw in text for kw in group_kws)) for key, group_kws in groups.items()}
+    matches["matched_keywords"] = matched_keywords
+    matches["score"] = len(matched_keywords)
+
+    min_score = config.get("min_score", 1)
+    matches["is_relevant"] = matches["score"] >= min_score
 
     return matches
 
@@ -99,6 +112,7 @@ def matches_location(job: Job, filters: dict) -> tuple[bool, str]:
 
     allow_remote_worldwide = filters.get("remote_worldwide", False)
     allow_remote_eu = filters.get("remote_eu", False)
+    allow_eu_nearby = filters.get("allow_eu_nearby", True)
     allowed_countries = [c.lower() for c in filters.get("countries", [])]
 
     if allow_remote_worldwide and re.search(r"\bremote\b", location_text):
@@ -113,6 +127,9 @@ def matches_location(job: Job, filters: dict) -> tuple[bool, str]:
         if any(city in location_text for city in LINZ_AREA_CITIES):
             return True, "linz_area"
         return True, "austria"
+
+    if allow_eu_nearby and any(city in location_text for city in EU_NEARBY_CITIES):
+        return True, "eu_nearby"
 
     return False, ""
 
@@ -142,7 +159,20 @@ def filter_jobs(jobs: list[Job], config: dict) -> list[dict]:
                 }
             )
 
-    return results
+    results.sort(key=lambda r: r["match_details"]["score"], reverse=True)
+    return dedupe_results(results)
+
+
+def dedupe_results(results: list[dict]) -> list[dict]:
+    seen = set()
+    unique = []
+    for item in results:
+        key = (item["title"].lower(), item.get("url") or item.get("source"))
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(item)
+    return unique
 
 
 def save_results(results: list[dict], total: int, output_path: str) -> dict:
