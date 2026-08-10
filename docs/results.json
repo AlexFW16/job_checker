@@ -1,6 +1,6 @@
 {
-  "check_date": "2026-08-09T17:18:18.869648",
-  "total_jobs_found": 593,
+  "check_date": "2026-08-10T09:20:25.034798",
+  "total_jobs_found": 571,
   "matching_jobs": 133,
   "results": [
     {
@@ -183,30 +183,6 @@
       "experience_level": "Experienced Professionals",
       "source": "tgw",
       "url": "https://www.tgw-group.com/en/career/jobs/detail/full-stack-developer-142/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          "developer",
-          " it",
-          "it ",
-          "full stack"
-        ],
-        "score": 5,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Full Stack Software Developer (w/m/d)",
-      "location": "Linz",
-      "country": "Austria",
-      "category": "3 Banken IT GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7855346",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -686,6 +662,28 @@
           "intern",
           "thesis",
           "application"
+        ],
+        "score": 3,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "MES Software Engineer - Schwerpunkt ABAP OO Development (m/w/d)",
+      "location": "Linz, Wien, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21369",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          "engineer",
+          "abap"
         ],
         "score": 3,
         "is_relevant": true
@@ -1389,6 +1387,26 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Learning & Development Manager",
+      "location": "Wels, Austria",
+      "country": "Austria",
+      "category": "Internal Services",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/learning-development-manager-1007/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": false,
+        "is_math_related": false,
+        "matched_keywords": [
+          "intern"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
       "title": "Cost Enineer",
       "location": "Wels, Austria",
       "country": "Austria",
@@ -1889,26 +1907,6 @@
       "location_match": "austria"
     },
     {
-      "title": "AI Engineer (all genders)",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "KEBA Group AG",
-      "experience_level": "",
-      "source": "keba",
-      "url": "https://jobs.keba.com/Job/2442",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "engineer"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Teamlead Software Development (all genders) ",
       "location": "Linz, Austria",
       "country": "Austria",
@@ -1922,6 +1920,26 @@
         "is_math_related": false,
         "matched_keywords": [
           "software"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "AI Engineer (all genders)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "KEBA Group AG",
+      "experience_level": "",
+      "source": "keba",
+      "url": "https://jobs.keba.com/Job/2442",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
         ],
         "score": 1,
         "is_relevant": true
@@ -2629,13 +2647,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Key Account & Business Development Manager im Software Umfeld (w/m/x)",
-      "location": "Linz , Wien",
+      "title": "Software Entwickler Odoo (w/m/x)",
+      "location": "Wien , Linz , Graz",
       "country": "Austria",
       "category": "epunkt GmbH",
       "experience_level": "",
       "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7827260",
+      "url": "https://www.karriere.at/jobs/7855916",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2669,13 +2687,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Software Entwickler Odoo (w/m/x)",
-      "location": "Wien , Linz , Graz",
+      "title": "Software Entwickler:in (m/w/d)",
+      "location": "Linz",
       "country": "Austria",
-      "category": "epunkt GmbH",
+      "category": "Hainzl Industriesysteme GmbH",
       "experience_level": "",
       "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7855916",
+      "url": "https://www.karriere.at/jobs/7785683",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2716,26 +2734,6 @@
       "experience_level": "",
       "source": "karriere.at",
       "url": "https://www.karriere.at/jobs/7842383",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Software Entwickler:in (m/w/d)",
-      "location": "Linz",
-      "country": "Austria",
-      "category": "Hainzl Industriesysteme GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7785683",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
