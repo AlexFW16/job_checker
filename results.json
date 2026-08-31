@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-08-24T08:47:08.980304",
-  "total_jobs_found": 584,
-  "matching_jobs": 141,
+  "check_date": "2026-08-31T15:52:41.280991",
+  "total_jobs_found": 562,
+  "matching_jobs": 131,
   "results": [
     {
       "title": "Full Stack Developer C# / Vue.js \u2013 Fokus Backend",
@@ -152,30 +152,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Software Developer Embedded Systems (New Productline)",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Development / Software / IT",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/software-developer-embedded-systems-new-productline-816/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          "developer",
-          " it",
-          "it ",
-          "embedded"
-        ],
-        "score": 5,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Senior Software Developer SAP",
       "location": "Marchtrenk, Austria",
       "country": "Austria",
@@ -193,30 +169,6 @@
           " it",
           "it ",
           "sap"
-        ],
-        "score": 5,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Full Stack Developer",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Development / Software / IT",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/full-stack-developer-142/",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          "developer",
-          " it",
-          "it ",
-          "full stack"
         ],
         "score": 5,
         "is_relevant": true
@@ -430,6 +382,29 @@
         "is_relevant": true
       },
       "location_match": "linz_area"
+    },
+    {
+      "title": "Frontend Developer (f/m/d) for Threat Analysis Software",
+      "location": "Vienna",
+      "country": "Austria",
+      "category": "CENTER FOR DIGITAL SAFETY & SECURITY",
+      "experience_level": "",
+      "source": "ait",
+      "url": "https://jobs.ait.ac.at/Job/270560",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": true,
+        "matched_keywords": [
+          "software",
+          "developer",
+          "frontend",
+          "analysis"
+        ],
+        "score": 4,
+        "is_relevant": true
+      },
+      "location_match": "austria"
     },
     {
       "title": "ABAP Software Engineer mit Schwerpunkt Vertriebslogistik (m/w/d)",
@@ -785,6 +760,28 @@
       "location_match": "austria"
     },
     {
+      "title": "TechLead / Product Owner Software (m/w/d)",
+      "location": "Graz, AT",
+      "country": "Austria",
+      "category": "IT & Software",
+      "experience_level": "",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-TechLead-Product-Owner-Software-%28mwd%29/1411514733/",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          " it",
+          "it "
+        ],
+        "score": 3,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Initiative application for an internship or for a thesis (all genders) - AUSTRIA",
       "location": "Linz, Austria",
       "country": "Austria",
@@ -895,21 +892,21 @@
       "location_match": "linz_area"
     },
     {
-      "title": "(Junior) Software Developer (w/m/x)",
-      "location": "Linz",
+      "title": "Software Entwickler mit Fokus Python (w/m/x)",
+      "location": "Wien , Linz , Graz",
       "country": "Austria",
       "category": "epunkt GmbH",
       "experience_level": "",
       "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7793081",
+      "url": "https://www.karriere.at/jobs/7855916",
       "match_details": {
-        "is_junior_level": true,
+        "is_junior_level": false,
         "is_software_dev": true,
         "is_math_related": false,
         "matched_keywords": [
-          "junior",
           "software",
-          "developer"
+          "it ",
+          "python"
         ],
         "score": 3,
         "is_relevant": true
@@ -1002,6 +999,27 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Masterarbeit \u201eElektrochemische Biosensoren f\u00fcr die Nukleins\u00e4uredetektion der N\u00e4chsten Generation\u201c",
+      "location": "Vienna",
+      "country": "Austria",
+      "category": "CENTER FOR HEALTH & BIORESOURCES",
+      "experience_level": "",
+      "source": "ait",
+      "url": "https://jobs.ait.ac.at/Job/269965",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "masterarbeit",
+          "it "
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Junior Research Engineer (f/m/d) in AI for  Cyber Threat Intelligence (Part-Time/Full-Time)",
       "location": "Vienna",
       "country": "Austria",
@@ -1044,27 +1062,6 @@
       "location_match": "austria"
     },
     {
-      "title": "Master Thesis \"Meta Learning in Nonlineary Dynamic System Modelling\"",
-      "location": "Vienna",
-      "country": "Austria",
-      "category": "CENTER FOR VISION, AUTOMATION & CONTROL",
-      "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/265806",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": true,
-        "matched_keywords": [
-          "thesis",
-          "modelling"
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
       "title": "Master Thesis \u201cDifferentiable Ray Tracing for Radio Propagation Modeling\u201d",
       "location": "Vienna",
       "country": "Austria",
@@ -1084,48 +1081,6 @@
         "is_relevant": true
       },
       "location_match": "austria"
-    },
-    {
-      "title": "Start your career at AVL in Graz/Steyr: Internships for students - Apply now!",
-      "location": "Graz, AT",
-      "country": "Austria",
-      "category": "Administration",
-      "experience_level": "",
-      "source": "avl",
-      "url": "https://jobs.avl.com/job/Graz-Start-your-career-at-AVL-in-GrazSteyr-Internships-for-students-Apply-now%21/1277939101/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "intern",
-          "student"
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
-      "title": "Internship AI \u2013 Computer Vision & Multimodal AI  - 6 months, part-time (20 hours/week) ",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "KEBA Handover Automation GmbH",
-      "experience_level": "",
-      "source": "keba",
-      "url": "https://jobs.keba.com/Job/2444",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "intern",
-          "computer"
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
     },
     {
       "title": "Software Entwickler:in mit Security Fokus (m/w/*)",
@@ -1163,27 +1118,6 @@
         "matched_keywords": [
           "engineer",
           "data "
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Product & Service Lead f\u00fcr IT Security (m/w/d)",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Informationstechnologie",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21191",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          " it",
-          "it "
         ],
         "score": 2,
         "is_relevant": true
@@ -1254,27 +1188,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "SAP UI5 / Fiori Developer (m/w/d) \u2013 Logistik & S/4HANA",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Informationstechnologie",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21110",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "developer",
-          "sap"
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Mitarbeiter:in im Engineeringteam mit Schwerpunkt Technische Dokumentation",
       "location": "Zeltweg, \u00d6sterreich",
       "country": "Austria",
@@ -1331,6 +1244,27 @@
         "matched_keywords": [
           "diplomarbeit",
           "it "
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Software Engineer \u2013 Odoo & AI Solutions (w/m/d)",
+      "location": "Wien , Graz , Linz",
+      "country": "Austria",
+      "category": "Datenpol Gmbh",
+      "experience_level": "",
+      "source": "karriere.at",
+      "url": "https://www.karriere.at/jobs/10028125",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          "engineer"
         ],
         "score": 2,
         "is_relevant": true
@@ -1484,6 +1418,26 @@
       "location_match": "linz_area"
     },
     {
+      "title": "PR & Media Relations Manager / Media Spokesperson",
+      "location": "Marchtrenk, Austria",
+      "country": "Austria",
+      "category": "Internal Services",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/pr-media-relations-manager-media-spokesperson-1022/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": false,
+        "is_math_related": false,
+        "matched_keywords": [
+          "intern"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
       "title": "Technician Test Engineering",
       "location": "Wels, Austria",
       "country": "Austria",
@@ -1531,26 +1485,6 @@
       "experience_level": "Experienced Professionals",
       "source": "tgw",
       "url": "https://www.tgw-group.com/en/career/jobs/detail/cost-enineer-941/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "intern"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Operative Purchasing Agent",
-      "location": "Wels, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/operative-purchasing-agent-913/",
       "match_details": {
         "is_junior_level": true,
         "is_software_dev": false,
@@ -1684,46 +1618,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Group Tax Manager",
-      "location": "Marchtrenk, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/group-tax-manager-895/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "intern"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Expert Environmental Management",
-      "location": "Marchtrenk, Austria",
-      "country": "Austria",
-      "category": "Internal Services",
-      "experience_level": "Experienced Professionals",
-      "source": "tgw",
-      "url": "https://www.tgw-group.com/en/career/jobs/detail/expert-environmental-management-890/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "intern"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Project Manager Controls",
       "location": "Wels, Austria",
       "country": "Austria",
@@ -1824,6 +1718,26 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Mitarbeiter:in f\u00fcr den Empfang - Front Office (Vollzeit / Teilzeit, Mind. 25 h / Woche)",
+      "location": "Wien",
+      "country": "Austria",
+      "category": "FACILITY SERVICE & LAB INTEGRATION",
+      "experience_level": "",
+      "source": "ait",
+      "url": "https://jobs.ait.ac.at/Job/270402",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "it "
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Research Engineer (f/m/d) for Electric Vehicle Power Electronics",
       "location": "Vienna",
       "country": "Austria",
@@ -1857,26 +1771,6 @@
         "is_math_related": false,
         "matched_keywords": [
           "thesis"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
-      "title": "Mitarbeiter:in f\u00fcr den Empfang - Front Office (Vollzeit / Teilzeit, Mind. 25 h / Woche)",
-      "location": "Wien",
-      "country": "Austria",
-      "category": "FACILITY SERVICE & LAB INTEGRATION",
-      "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/270402",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it "
         ],
         "score": 1,
         "is_relevant": true
@@ -2024,46 +1918,6 @@
       "location_match": "austria"
     },
     {
-      "title": "PhD Thesis in Experimental Quantum Communication",
-      "location": "Vienna",
-      "country": "Austria",
-      "category": "CENTER FOR DIGITAL SAFETY & SECURITY",
-      "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/268234",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "thesis"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
-      "title": "AVL Graz/Steyr is always looking for new talents: Apply now as a graduate or professional!",
-      "location": "Graz, AT",
-      "country": "Austria",
-      "category": "Administration",
-      "experience_level": "",
-      "source": "avl",
-      "url": "https://jobs.avl.com/job/Graz-AVL-GrazSteyr-is-always-looking-for-new-talents-Apply-now-as-a-graduate-or-professional%21/1277192501/",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "graduate"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
       "title": "Teamlead Software Development (all genders) ",
       "location": "Linz, Austria",
       "country": "Austria",
@@ -2084,13 +1938,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "System Engineer Linux (all genders)",
-      "location": "Linz, Austria",
+      "title": "AI Engineer (all genders)",
+      "location": "Linz, \u00d6sterreich",
       "country": "Austria",
-      "category": "KEBA Handover Automation GmbH",
+      "category": "KEBA Group AG",
       "experience_level": "",
       "source": "keba",
-      "url": "https://jobs.keba.com/Job/2401",
+      "url": "https://jobs.keba.com/Job/2442",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2104,13 +1958,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "AI Engineer (all genders)",
-      "location": "Linz, \u00d6sterreich",
+      "title": "ECO Lead Engineer (m/w/*)",
+      "location": "Linz",
       "country": "Austria",
-      "category": "KEBA Group AG",
+      "category": "",
       "experience_level": "",
-      "source": "keba",
-      "url": "https://jobs.keba.com/Job/2442",
+      "source": "primetals",
+      "url": "https://jobs.primetals.com/Job/202696",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2204,24 +2058,24 @@
       "location_match": "linz_area"
     },
     {
-      "title": "ECO Lead Engineer (m/w/*)",
-      "location": "Linz",
+      "title": "Data Scientist (m/w/d)",
+      "location": "Krems an der Donau, \u00d6sterreich",
       "country": "Austria",
-      "category": "",
-      "experience_level": "",
-      "source": "primetals",
-      "url": "https://jobs.primetals.com/Job/202696",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21454",
       "match_details": {
         "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
+        "is_software_dev": false,
+        "is_math_related": true,
         "matched_keywords": [
-          "engineer"
+          "data "
         ],
         "score": 1,
         "is_relevant": true
       },
-      "location_match": "linz_area"
+      "location_match": "austria"
     },
     {
       "title": "Berufspraktikum Fachhochschule im Bereich Digital Marketing",
@@ -2344,26 +2198,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "IT Process Manager:in",
-      "location": "Linz, Wien, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Informationstechnologie",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21327",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it "
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Teamleiter:in SAP IC Business Processes (EDI)",
       "location": "Wien, \u00d6sterreich",
       "country": "Austria",
@@ -2384,7 +2218,27 @@
       "location_match": "austria"
     },
     {
-      "title": "Praktikum im Bereich Lean Management in der Produktion",
+      "title": "Kantinenmitarbeiter:in - Teilzeit",
+      "location": "Leoben, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Gastronomie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21326",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "it "
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
+      "title": "Praktikum im Bereich Produktions- und Prozessoptimierung",
       "location": "Krems an der Donau, \u00d6sterreich",
       "country": "Austria",
       "category": "Sonstige Berufsfelder",
@@ -2537,26 +2391,6 @@
         "is_math_related": false,
         "matched_keywords": [
           "sap"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Arbeitsmediziner:in",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Arbeitsmedizin / Arbeitssicherheit",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=20265",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it "
         ],
         "score": 1,
         "is_relevant": true
@@ -2784,13 +2618,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Softwareentwickler*in \u2013 Schwerpunkt KI (m/w/d)",
-      "location": "Steyr",
+      "title": "Softwareentwickler:in \u2013 Schwerpunkt AI (w/m/d)",
+      "location": "Linz",
       "country": "Austria",
-      "category": "Hartlauer HandelsgesmbH",
+      "category": "Fabasoft",
       "experience_level": "",
       "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7854638",
+      "url": "https://www.karriere.at/jobs/10026641",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2811,26 +2645,6 @@
       "experience_level": "",
       "source": "karriere.at",
       "url": "https://www.karriere.at/jobs/10027707",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Software Entwickler Odoo (w/m/x)",
-      "location": "Wien , Linz , Graz",
-      "country": "Austria",
-      "category": "epunkt GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7855916",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2884,26 +2698,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Software-Entwickler:in (m/w/d)*",
-      "location": "Marchtrenk",
-      "country": "Austria",
-      "category": "TGW Logistics GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7842383",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Software Entwickler:in (m/w/d)",
       "location": "Linz",
       "country": "Austria",
@@ -2924,13 +2718,13 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Softwareentwickler:in \u2013 Schwerpunkt AI (w/m/d)",
-      "location": "Linz",
+      "title": "Software-Entwickler:in (m/w/d)*",
+      "location": "Marchtrenk",
       "country": "Austria",
-      "category": "Fabasoft",
+      "category": "TGW Logistics GmbH",
       "experience_level": "",
       "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/10026641",
+      "url": "https://www.karriere.at/jobs/7842383",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
