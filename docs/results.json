@@ -1,7 +1,7 @@
 {
-  "check_date": "2026-11-09T18:22:32.184003",
-  "total_jobs_found": 658,
-  "matching_jobs": 132,
+  "check_date": "2026-11-16T17:58:58.027069",
+  "total_jobs_found": 646,
+  "matching_jobs": 142,
   "results": [
     {
       "title": "Full Stack Developer C# / Vue.js \u2013 Fokus Backend",
@@ -25,6 +25,30 @@
           "c#"
         ],
         "score": 7,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Senior Embedded Software Developer (C++ / Linux) for High-Performance Shuttle Systems",
+      "location": "Wels, Austria",
+      "country": "Austria",
+      "category": "Development / Software / IT",
+      "experience_level": "Experienced Professionals",
+      "source": "tgw",
+      "url": "https://www.tgw-group.com/en/career/jobs/detail/senior-embedded-software-developer-c-linux-for-high-performance-shuttle-systems-978/",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          "developer",
+          " it",
+          "it ",
+          "embedded"
+        ],
+        "score": 5,
         "is_relevant": true
       },
       "location_match": "linz_area"
@@ -278,29 +302,6 @@
           "engineer",
           "it ",
           "abap"
-        ],
-        "score": 4,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Software Developer Core Banking Systems (w/m/d)",
-      "location": "Linz",
-      "country": "Austria",
-      "category": "3 Banken IT GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/7868989",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          "developer",
-          " it",
-          "it "
         ],
         "score": 4,
         "is_relevant": true
@@ -573,6 +574,28 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Business Process & Digital Transformation Manager (m/w/d)",
+      "location": "Graz, AT",
+      "country": "Austria",
+      "category": "IT & Software",
+      "experience_level": "",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-Business-Process-&-Digital-Transformation-Manager-%28mwd%29/1457304033/",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          " it",
+          "it "
+        ],
+        "score": 3,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Initiative application for an internship or for a thesis (all genders) - AUSTRIA",
       "location": "Linz, Austria",
       "country": "Austria",
@@ -659,28 +682,6 @@
         "is_relevant": true
       },
       "location_match": "austria"
-    },
-    {
-      "title": ".NET/C# Full-Stack Software Engineer f\u00fcr Medizinprodukte",
-      "location": "Linz",
-      "country": "Austria",
-      "category": "Adliance GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/10033035",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          "engineer",
-          "c#"
-        ],
-        "score": 3,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
     },
     {
       "title": "Software Entwickler mit Fokus Python (w/m/x)",
@@ -979,6 +980,48 @@
       "location_match": "austria"
     },
     {
+      "title": "Start your career at AVL in Graz/Steyr: Internships for students - Apply now!",
+      "location": "Graz, AT",
+      "country": "Austria",
+      "category": "Administration",
+      "experience_level": "",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-Start-your-career-at-AVL-in-GrazSteyr-Internships-for-students-Apply-now%21/1277939101/",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": false,
+        "is_math_related": false,
+        "matched_keywords": [
+          "intern",
+          "student"
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
+      "title": "CAD/CAM Programmer focus CNC Machining f/m/d",
+      "location": "Graz, AT",
+      "country": "Austria",
+      "category": "Mechanical Engineering",
+      "experience_level": "",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-CADCAM-Programmer-focus-CNC-Machining-fmd/1457181533/",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "programmer",
+          "engineer"
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Field Application Engineer",
       "location": "France / remote",
       "country": "",
@@ -998,6 +1041,90 @@
         "is_relevant": true
       },
       "location_match": "remote"
+    },
+    {
+      "title": "Senior Software Developer in Test Automation (m/w/d)",
+      "location": "Linz, Wien, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22129",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          "developer"
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "SAP Analytics Cloud Specialist (m/w/d)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22114",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": true,
+        "matched_keywords": [
+          "sap",
+          "analytics"
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Solution Manager:in IT",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22119",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          " it",
+          "it "
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Local IT Manager:in",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22102",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          " it",
+          "it "
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
     },
     {
       "title": "Junior Solution Engineer Automation (m/w/d)",
@@ -1077,27 +1204,6 @@
         "matched_keywords": [
           "diplomarbeit",
           "it "
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "IT Projektmanager:in Applications",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Informationstechnologie",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21629",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it ",
-          "application"
         ],
         "score": 2,
         "is_relevant": true
@@ -1252,6 +1358,27 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Softwareentwickler:in in Microsoft Dynamics 365 FSCM mit Schwerpunkt Daten & BI (m/w/d)",
+      "location": "St. Martin im Innkreis",
+      "country": "Austria",
+      "category": "PC Electric GesmbH",
+      "experience_level": "",
+      "source": "karriere.at",
+      "url": "https://www.karriere.at/jobs/10035246",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "software",
+          "it "
+        ],
+        "score": 2,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Senior Softwareentwickler:in C# / .NET",
       "location": "Gurten",
       "country": "Austria",
@@ -1271,27 +1398,6 @@
         "is_relevant": true
       },
       "location_match": "austria"
-    },
-    {
-      "title": "Informatiker:in f\u00fcr Softwareentwicklung, Automatisierung & IT-Betreuung (w/m/d)",
-      "location": "Steyr",
-      "country": "Austria",
-      "category": "GRS Wirtschaftspr\u00fcfung Steuerberatung GmbH",
-      "experience_level": "",
-      "source": "karriere.at",
-      "url": "https://www.karriere.at/jobs/10036325",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "software",
-          " it"
-        ],
-        "score": 2,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
     },
     {
       "title": "Installation Specialist - Mechanical Engineering / Automation Technology",
@@ -1634,6 +1740,46 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Studentische:r Mitarbeiter:in f\u00fcr Publikationsmanagement und Reporting (Teilzeit: 10 h / Woche)",
+      "location": "Wien",
+      "country": "Austria",
+      "category": "CENTER FOR DIGITAL SAFETY & SECURITY",
+      "experience_level": "",
+      "source": "ait",
+      "url": "https://jobs.ait.ac.at/Job/273853",
+      "match_details": {
+        "is_junior_level": true,
+        "is_software_dev": false,
+        "is_math_related": false,
+        "matched_keywords": [
+          "student"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
+      "title": "Applied Research Engineer (f/m/d) for 6G Wireless Communication (ISAC)",
+      "location": "Vienna",
+      "country": "Austria",
+      "category": "CENTER FOR DIGITAL SAFETY & SECURITY",
+      "experience_level": "",
+      "source": "ait",
+      "url": "https://jobs.ait.ac.at/Job/272796",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
       "title": "Junior Scientist (w/m/d) AI Governance (Teilzeit: 25-30 h / Woche)",
       "location": "Wien",
       "country": "Austria",
@@ -1707,26 +1853,6 @@
         "is_math_related": false,
         "matched_keywords": [
           "thesis"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
-      "title": "Working Student (f/m/d) - Project Management & Hub Operations (Part-Time: 20 H / Week)",
-      "location": "Vienna",
-      "country": "Austria",
-      "category": "AI:AT - AI FACTORY AUSTRIA",
-      "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/273291",
-      "match_details": {
-        "is_junior_level": true,
-        "is_software_dev": false,
-        "is_math_related": false,
-        "matched_keywords": [
-          "student"
         ],
         "score": 1,
         "is_relevant": true
@@ -1974,19 +2100,19 @@
       "location_match": "austria"
     },
     {
-      "title": "Power Electronics Engineer (f/m/d) \u2013 Medium Voltage & High-Power Conversion Systems",
-      "location": "Vienna",
+      "title": "AVL Graz/Steyr is always looking for new talents: Apply now as a graduate or professional!",
+      "location": "Graz, AT",
       "country": "Austria",
-      "category": "CENTER FOR ENERGY",
+      "category": "Administration",
       "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/268343",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-AVL-GrazSteyr-is-always-looking-for-new-talents-Apply-now-as-a-graduate-or-professional%21/1277192501/",
       "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
+        "is_junior_level": true,
+        "is_software_dev": false,
         "is_math_related": false,
         "matched_keywords": [
-          "engineer"
+          "graduate"
         ],
         "score": 1,
         "is_relevant": true
@@ -1994,13 +2120,13 @@
       "location_match": "austria"
     },
     {
-      "title": "Research Engineer (f/m/d) for Electric Vehicle Power Electronics",
-      "location": "Vienna",
+      "title": "CAD/CAM Programmierer:in Schwerpunkt Zerspanungstechnik",
+      "location": "Graz, AT",
       "country": "Austria",
-      "category": "CENTER FOR ENERGY",
+      "category": "Mechanical Engineering",
       "experience_level": "",
-      "source": "ait",
-      "url": "https://jobs.ait.ac.at/Job/269432",
+      "source": "avl",
+      "url": "https://jobs.avl.com/job/Graz-CADCAM-Programmiererin-Schwerpunkt-Zerspanungstechnik/1457181433/",
       "match_details": {
         "is_junior_level": false,
         "is_software_dev": true,
@@ -2094,6 +2220,146 @@
       "location_match": "linz_area"
     },
     {
+      "title": "Mechatronic Engineering Specialist (m/w/d)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Technik / Ingenieurswesen",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22124",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Werkstofftechniker:in f\u00fcr Metallographie und Qualit\u00e4tssicherung",
+      "location": "Bruck an der Mur, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Technik / Ingenieurswesen",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22123",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": false,
+        "is_math_related": true,
+        "matched_keywords": [
+          "graph"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
+      "title": "Sicherheitsfachkraft f\u00fcr die Luftfahrtindustrie",
+      "location": "Kapfenberg, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Arbeitsmedizin / Arbeitssicherheit",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22108",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "it "
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
+    },
+    {
+      "title": "Mitarbeiter:in f\u00fcr den Lebensmittelverkauf mit Kassat\u00e4tigkeit im Schichtbetrieb",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Gastronomie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22101",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "it "
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Solution Engineer Automation - MBI (m/w/d)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22096",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Solution Engineer Automation (m/w/d)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22095",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
+      "title": "Senior Solution Engineer Automation (m/w/d)",
+      "location": "Linz, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Informationstechnologie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=22093",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "engineer"
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "linz_area"
+    },
+    {
       "title": "Junior Communications Manager:in",
       "location": "Linz, \u00d6sterreich",
       "country": "Austria",
@@ -2174,26 +2440,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "P\u00e4dagogische Assistenzkraft vivo Kinderwelt PLUS - Teilzeit",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Assistenz / Sekretariat",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21998",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it "
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Network Security Specialist IT/OT-Segmentierung (m/w/d)",
       "location": "Linz, \u00d6sterreich",
       "country": "Austria",
@@ -2207,26 +2453,6 @@
         "is_math_related": false,
         "matched_keywords": [
           " it"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
-      "title": "Fachingenieur:in Maschinenbau mit Spezialgebiet F\u00f6rdertechnik",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Technik / Ingenieurswesen",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21843",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "it "
         ],
         "score": 1,
         "is_relevant": true
@@ -2354,26 +2580,6 @@
       "location_match": "linz_area"
     },
     {
-      "title": "Operative:r Eink\u00e4ufer:in f\u00fcr Feuerfestmaterialien, Kalk, Zuschlagstoffe und Graphitelektroden",
-      "location": "Linz, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Einkauf",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21698",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": false,
-        "is_math_related": true,
-        "matched_keywords": [
-          "graph"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "linz_area"
-    },
-    {
       "title": "Ferialjobs / Pflichtpraktikum Gastronomie Saison 2027",
       "location": "Linz, \u00d6sterreich",
       "country": "Austria",
@@ -2454,26 +2660,6 @@
       "location_match": "austria"
     },
     {
-      "title": "Techniker:in Quality Engineering",
-      "location": "Traisen, \u00d6sterreich",
-      "country": "Austria",
-      "category": "Technik / Ingenieurswesen",
-      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
-      "source": "voestalpine",
-      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21599",
-      "match_details": {
-        "is_junior_level": false,
-        "is_software_dev": true,
-        "is_math_related": false,
-        "matched_keywords": [
-          "engineer"
-        ],
-        "score": 1,
-        "is_relevant": true
-      },
-      "location_match": "austria"
-    },
-    {
       "title": "Arbeitsmediziner:in",
       "location": "Linz, \u00d6sterreich",
       "country": "Austria",
@@ -2532,6 +2718,26 @@
         "is_relevant": true
       },
       "location_match": "linz_area"
+    },
+    {
+      "title": "Kantinenmitarbeiter:in - Teilzeit",
+      "location": "Leoben, \u00d6sterreich",
+      "country": "Austria",
+      "category": "Gastronomie",
+      "experience_level": "Mitarbeiter:in/ Festangestellte:r",
+      "source": "voestalpine",
+      "url": "https://jobs.voestalpine.com/index.php?ac=jobad&id=21326",
+      "match_details": {
+        "is_junior_level": false,
+        "is_software_dev": true,
+        "is_math_related": false,
+        "matched_keywords": [
+          "it "
+        ],
+        "score": 1,
+        "is_relevant": true
+      },
+      "location_match": "austria"
     },
     {
       "title": "Product & Service Lead \u2013 Application Platforms (m/w/d)",
