@@ -1,9 +1,7 @@
 import json
 from pathlib import Path
 
-import pytest
-
-from main import matches_keywords, matches_location
+from matching import matches_keywords, matches_location
 from scrapers.base import Job
 from scrapers.common import is_valid_job_title
 from scrapers.companies import VoestalpineScraper

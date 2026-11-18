@@ -11,7 +11,13 @@ class Job:
     experience_level: str
     source: str
     url: str = ""
+    company: str = ""
     raw: dict = field(default_factory=dict)
+    description: str = ""
+    # Structured salary from feeds that expose it directly (e.g. Talent Taiwan).
+    # When set, build_result() prefers these over scraping the description.
+    salary_text: str = ""
+    salary_min: int | float | None = None
 
 
 class BaseScraper(ABC):

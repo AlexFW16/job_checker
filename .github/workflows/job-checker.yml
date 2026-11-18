@@ -24,19 +24,37 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-dev.txt
+
+      - name: Run offline test suite
+        run: python -m pytest -q
 
       - name: Run job checker
         run: python main.py
+        continue-on-error: true
+
+      - name: Run Taiwan job checker
+        run: python taiwan_main.py
         continue-on-error: true
 
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add results.json docs/results.json
+          for file in results.json docs/results.json history.json \
+                      results.taiwan.json docs/results.taiwan.json history.taiwan.json; do
+            if [ -f "$file" ]; then git add -- "$file"; fi
+          done
           git diff --cached --quiet || git commit -m "Update job check results ($(date +%Y-%m-%d))"
           git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload updated Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "docs"
 
   deploy:
     needs: check-jobs
@@ -45,16 +63,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "docs"
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

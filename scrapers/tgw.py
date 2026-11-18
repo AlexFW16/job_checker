@@ -1,9 +1,9 @@
 import re
 
-import requests
 from bs4 import BeautifulSoup
 
 from scrapers.base import BaseScraper, Job
+from scrapers.common import build_url, cap_jobs, fetch_html, is_valid_job_title
 
 TGW_URL = "https://www.tgw-group.com/en/career/jobs"
 
@@ -14,18 +14,11 @@ class TGWScraper(BaseScraper):
         return "tgw"
 
     def fetch_jobs(self) -> list[Job]:
-        html = self._fetch_page()
-        return self._parse_jobs(html)
-
-    def _fetch_page(self) -> str:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (compatible; JobChecker/1.0)",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.5",
-        }
-        resp = requests.get(TGW_URL, headers=headers, timeout=30)
-        resp.raise_for_status()
-        return resp.text
+        try:
+            html = fetch_html(TGW_URL, retries=2)
+            return self._parse_jobs(html)
+        except Exception:
+            return []
 
     def _parse_jobs(self, html: str) -> list[Job]:
         soup = BeautifulSoup(html, "html.parser")
@@ -50,19 +43,20 @@ class TGWScraper(BaseScraper):
                 for job_link in child.find_all("a", class_="jobItem"):
                     parts = job_link.find_all("div", class_="jobListPart")
                     if len(parts) >= 4:
-                        location = re.sub(
-                            r"\s+", " ", parts[1].get_text(strip=True)
-                        )
+                        title = parts[0].get_text(strip=True)
+                        if not is_valid_job_title(title):
+                            continue
+                        location = re.sub(r"\s+", " ", parts[1].get_text(strip=True))
                         jobs.append(
                             Job(
-                                title=parts[0].get_text(strip=True),
+                                title=title,
                                 location=location,
                                 country=current_country,
                                 category=parts[2].get_text(strip=True),
                                 experience_level=parts[3].get_text(strip=True),
                                 source=self.name,
-                                url=job_link.get("href", ""),
+                                url=build_url(TGW_URL, job_link.get("href", "")),
                             )
                         )
 
-        return jobs
+        return cap_jobs(jobs)

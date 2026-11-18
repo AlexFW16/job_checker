@@ -1,35 +1,45 @@
 import json
 import re
-from urllib.parse import urlencode, urljoin
+from urllib.parse import urlencode
 
-import requests
 from bs4 import BeautifulSoup
 
+from matching import EUROPEAN_COUNTRIES
 from scrapers.base import BaseScraper, Job
 from scrapers.common import (
     build_url,
     cap_jobs,
     fetch_html,
     fetch_json,
+    fetch_json_post,
     is_valid_job_title,
+    MAX_JOBS_PER_SCRAPER,
     parse_erecruiter_jobs,
 )
 
 AUSTRIAN_CITIES = (
-    "austria|österreich|wien|vienna|linz|graz|villach|salzburg|klagenfurt|innsbruck"
-    "|steyr|hagenberg|marchtrenk|wels|leonding|traun|pasching|ansfelden"
+    r"\b(?:austria|österreich|wien|vienna|linz|graz|villach|salzburg|klagenfurt|innsbruck"
+    r"|steyr|hagenberg|marchtrenk|wels|leonding|traun|pasching|ansfelden)\b"
 )
+
+# EUROPEAN_COUNTRIES is shared with location matching in matching.py.
+
+def _normalize_ws(text: str) -> str:
+    return re.sub(r"\s+", " ", text or "").strip()
+
+
+def _has_word_prefix(text: str, terms: list[str]) -> bool:
+    return any(re.search(rf"\b{re.escape(term)}", text, re.I) for term in terms)
 
 
 def _guess_category(title: str) -> str:
-    t = title.lower()
-    if any(k in t for k in ["software", "developer", "entwickl", "programm", "ai", "data", "it/", "engineer"]):
+    if _has_word_prefix(title, ["software", "developer", "entwickl", "programm", "ai", "data", "it/"]):
         return "Development / Software / IT"
-    if any(k in t for k in ["masterarbeit", "bach", "thesis", "intern", "stud", "research", "forschung"]):
+    if _has_word_prefix(title, ["masterarbeit", "bach", "thesis", "intern", "stud", "research", "forschung"]):
         return "Research"
-    if any(k in t for k in ["consultant", "product manager", "project", "management"]):
+    if _has_word_prefix(title, ["consultant", "product manager", "project", "management"]):
         return "Project Management"
-    if any(k in t for k in ["lehrling", "apprentice", "ausbildung", "lehre"]):
+    if _has_word_prefix(title, ["lehrling", "apprentice", "ausbildung", "lehre"]):
         return "Apprenticeship"
     return "Other"
 
@@ -139,7 +149,12 @@ class RISCRScraper(BaseScraper):
 
 
 class SALScraper(BaseScraper):
-    """Silicon Austria Labs - uses Personio ATS."""
+    """Silicon Austria Labs - moved from Personio to a rexx-systems career site.
+
+    Listing is server-rendered and paginated via ?start=N.
+    """
+
+    LIST_URL = "https://career.silicon-austria-labs.com/stellenangebote.html"
 
     @property
     def name(self) -> str:
@@ -147,46 +162,59 @@ class SALScraper(BaseScraper):
 
     def fetch_jobs(self) -> list[Job]:
         try:
-            html = fetch_html(
-                "https://silicon-austria-labs.jobs.personio.de/?language=en",
-                retries=3,
-            )
-            return self._parse_html_jobs(html)
+            return self._fetch_pages()
         except Exception:
             return []
 
-    def _parse_html_jobs(self, html: str) -> list[Job]:
-        soup = BeautifulSoup(html, "html.parser")
+    def _fetch_pages(self) -> list[Job]:
         jobs = []
         seen = set()
-        for a in soup.find_all("a", href=True):
-            href = a.get("href", "")
-            if "job" not in href.lower():
+        for start in range(0, 100, 10):
+            url = f"{self.LIST_URL}?start={start}" if start else self.LIST_URL
+            try:
+                html = fetch_html(url, retries=2)
+            except Exception:
+                break
+            batch = self._parse_listing(html)
+            new_jobs = []
+            for job in batch:
+                if job.url in seen:
+                    continue
+                seen.add(job.url)
+                new_jobs.append(job)
+            if not new_jobs:
+                break
+            jobs.extend(new_jobs)
+        return cap_jobs(jobs)
+
+    def _parse_listing(self, html: str) -> list[Job]:
+        soup = BeautifulSoup(html, "html.parser")
+        jobs = []
+        for article in soup.find_all("article", class_=re.compile(r"joboffer", re.I)):
+            link = article.find("a", href=re.compile(r"-j\d+\.html", re.I))
+            if not link:
                 continue
-            title = a.get_text(strip=True)
-            if not is_valid_job_title(title) or title in seen:
+            title = link.get_text(" ", strip=True)
+            if not is_valid_job_title(title):
                 continue
-            seen.add(title)
-            container = a.find_parent("li") or a.find_parent("div")
-            location = ""
-            if container:
-                for el in container.find_all(class_=re.compile(r"location|data-location", re.I)):
-                    location = el.get_text(strip=True)
-                    if location:
-                        break
-            country = "Austria" if re.search(AUSTRIAN_CITIES, f"{location} {a.get_text(strip=True)}", re.I) else ""
+            level_el = article.find(class_=re.compile(r"job_details_second", re.I))
+            loc_el = article.find(class_=re.compile(r"job_standort", re.I))
+            mode_el = article.find(class_=re.compile(r"job_location", re.I))
+            location = ", ".join(
+                x for x in (loc_el.get_text(" ", strip=True) if loc_el else "", mode_el.get_text(" ", strip=True) if mode_el else "") if x
+            )
             jobs.append(
                 Job(
                     title=title,
                     location=location,
-                    country=country,
-                    category=_guess_category(title),
-                    experience_level="",
+                    country="Austria",
+                    category="",
+                    experience_level=level_el.get_text(" ", strip=True) if level_el else "",
                     source=self.name,
-                    url=build_url("https://silicon-austria-labs.jobs.personio.de", href),
+                    url=build_url(self.LIST_URL, link.get("href", "")),
                 )
             )
-        return cap_jobs(jobs)
+        return jobs
 
 
 class AITScraper(BaseScraper):
@@ -293,8 +321,8 @@ class KEBAScraper(BaseScraper):
 
 
 class InfineonScraper(BaseScraper):
-    """Infineon - Workday career site renders jobs client-side; no public feed found.
-    Kept as a no-op that returns no jobs rather than garbage."""
+    """Infineon - Workday career site. cxs API returns HTTP 422/500 and the SPA
+    renders jobs client-side; kept as a no-op until a working feed is confirmed."""
 
     @property
     def name(self) -> str:
@@ -325,8 +353,8 @@ class PrimetalsScraper(BaseScraper):
 
 
 class LAMResearchScraper(BaseScraper):
-    """LAM Research - Phenom career site renders jobs client-side; no public feed found.
-    Kept as a no-op that returns no jobs rather than garbage."""
+    """LAM Research - Phenom career site renders jobs client-side; no public feed
+    found. Kept as a no-op until a feed is confirmed."""
 
     @property
     def name(self) -> str:
@@ -337,8 +365,8 @@ class LAMResearchScraper(BaseScraper):
 
 
 class SiemensScraper(BaseScraper):
-    """Siemens - AvaPortal careers site renders jobs client-side; no public feed found.
-    Kept as a no-op that returns no jobs rather than garbage."""
+    """Siemens - AvaPortal careers site renders jobs client-side; no public feed
+    found. Kept as a no-op until a feed is confirmed."""
 
     @property
     def name(self) -> str:
@@ -476,3 +504,256 @@ class VoestalpineScraper(BaseScraper):
         if isinstance(value, dict):
             return value.get("Name", "")
         return str(value)
+
+
+class FabasoftScraper(BaseScraper):
+    """Fabasoft - server-rendered career page with `list-group-item` job cards."""
+
+    BASE_URL = "https://www.fabasoft.com"
+    JOBS_URL = "https://www.fabasoft.com/en/career/jobs"
+
+    @property
+    def name(self) -> str:
+        return "fabasoft"
+
+    def fetch_jobs(self) -> list[Job]:
+        try:
+            html = fetch_html(self.JOBS_URL)
+            return self._parse_jobs(html)
+        except Exception:
+            return []
+
+    def _parse_jobs(self, html: str) -> list[Job]:
+        soup = BeautifulSoup(html, "html.parser")
+        jobs = []
+        seen = set()
+        for anchor in soup.find_all("a", href=True):
+            href = anchor["href"]
+            if not re.search(r"/(career|karriere)/jobs/", href) or href in seen:
+                continue
+            heading = anchor.find("h3")
+            if not heading:
+                continue
+            title = _normalize_ws(heading.get_text(" ", strip=True))
+            if not is_valid_job_title(title):
+                continue
+            seen.add(href)
+            span = anchor.find("span")
+            location = _normalize_ws(span.get_text(" ", strip=True)) if span else ""
+            country = "Austria" if re.search(AUSTRIAN_CITIES, location, re.I) else ""
+            jobs.append(
+                Job(
+                    title=title,
+                    location=location,
+                    country=country,
+                    category=_guess_category(title),
+                    experience_level="",
+                    source=self.name,
+                    url=build_url(self.BASE_URL, href),
+                )
+            )
+        return cap_jobs(jobs)
+
+
+class DynatraceScraper(BaseScraper):
+    """Dynatrace - careers site backed by a Coveo search API (JSON POST).
+
+    The listing is a client-side Astro/React app; the job data comes from
+    `/api/coveo/search/`. Keeps Austrian postings plus remote European ones.
+    """
+
+    COVEO_URL = "https://www.dynatrace.com/api/coveo/search/"
+    FIELDS = [
+        "team",
+        "office_locations",
+        "country",
+        "seniority",
+        "technologies",
+        "flex_option",
+        "capability",
+        "employment_type",
+        "is_karriere_at",
+        "job_id",
+        "region",
+    ]
+
+    @property
+    def name(self) -> str:
+        return "dynatrace"
+
+    def fetch_jobs(self) -> list[Job]:
+        payload = {
+            "q": "",
+            "numberOfResults": 1000,
+            "wildcards": True,
+            "fieldsToInclude": self.FIELDS,
+            "facets": [],
+        }
+        try:
+            data = fetch_json_post(self.COVEO_URL, payload)
+            return self._parse_results(data)
+        except Exception:
+            return []
+
+    def _parse_results(self, data: dict) -> list[Job]:
+        jobs = []
+        for entry in data.get("results", []) or []:
+            title = entry.get("title", "")
+            if not is_valid_job_title(title):
+                continue
+            raw = entry.get("raw") or {}
+            countries = [str(c) for c in raw.get("country") or []]
+            flex = [str(f) for f in raw.get("flex_option") or []]
+            remote = any("remote" in f.lower() for f in flex)
+            austria = any("austria" in c.lower() for c in countries)
+            europe = any(c in EUROPEAN_COUNTRIES for c in countries)
+            if not austria and not (remote and europe):
+                continue
+            locations = [str(x) for x in raw.get("office_locations") or []]
+            if remote:
+                locations.append("Remote")
+            jobs.append(
+                Job(
+                    title=title,
+                    location=", ".join(dict.fromkeys(locations)),
+                    country="Austria" if austria else (countries[0] if countries else ""),
+                    category=", ".join(str(t) for t in raw.get("team") or []),
+                    experience_level=", ".join(str(s) for s in raw.get("seniority") or []),
+                    source=self.name,
+                    url=entry.get("uri") or entry.get("clickUri") or "",
+                    raw=raw,
+                )
+            )
+        return cap_jobs(jobs)
+
+
+class BRScraper(BaseScraper):
+    """B&R (ABB) - Workday cxs JSON API; searches the Eggelsberg HQ postings.
+
+    Workday rate-limits aggressive callers (HTTP 400 on rapid repeats), so pages
+    are bounded and fetched without retries; earlier pages survive later failures.
+    """
+
+    WORKDAY_URL = "https://abb.wd3.myworkdayjobs.com/wday/cxs/abb/External_Career_Page/jobs"
+    JOB_BASE = "https://abb.wd3.myworkdayjobs.com/en-US/External_Career_Page"
+
+    @property
+    def name(self) -> str:
+        return "br"
+
+    def fetch_jobs(self) -> list[Job]:
+        jobs: list[Job] = []
+        seen: set[str] = set()
+        for offset in range(0, MAX_JOBS_PER_SCRAPER, 50):
+            payload = {
+                "appliedFacets": {},
+                "limit": 50,
+                "offset": offset,
+                "searchText": "Eggelsberg",
+            }
+            try:
+                data = fetch_json_post(self.WORKDAY_URL, payload, retries=0)
+            except Exception:
+                break
+            postings = data.get("jobPostings", []) if isinstance(data, dict) else []
+            if not postings:
+                break
+            batch = self._parse_results(data)
+            new_jobs = [job for job in batch if job.url not in seen]
+            jobs.extend(new_jobs)
+            seen.update(job.url for job in new_jobs)
+            total = data.get("total", 0)
+            if not new_jobs or len(postings) < 50 or offset + len(postings) >= total:
+                break
+        return cap_jobs(jobs)
+
+    def _parse_results(self, data: dict) -> list[Job]:
+        jobs = []
+        for post in data.get("jobPostings", []) or []:
+            path = post.get("externalPath", "")
+            locations = post.get("locationsText", "")
+            # Multi-location postings report "2 Locations"; the country is only
+            # visible in the externalPath slug (e.g. Eggelsberg-Oberosterreich-Austria).
+            if not path or not re.search(r"austria", f"{path} {locations}", re.I):
+                continue
+            title = post.get("title", "")
+            if not is_valid_job_title(title):
+                continue
+            location = _normalize_ws(locations)
+            if re.fullmatch(r"\d+\s+locations?", location, re.I):
+                location = "Eggelsberg, Austria" if re.search(r"eggelsberg", path, re.I) else ""
+            jobs.append(
+                Job(
+                    title=title,
+                    location=location or "Eggelsberg, Austria",
+                    country="Austria",
+                    category=_guess_category(title),
+                    experience_level="",
+                    source=self.name,
+                    url=f"{self.JOB_BASE}{path}",
+                )
+            )
+        return cap_jobs(jobs)
+
+
+class JKUScraper(BaseScraper):
+    """JKU Jobbörse - server-rendered Drupal board for JKU students & alumni."""
+
+    BASE_URL = "https://jobboerse.jku.at"
+    JOBS_URL = "https://jobboerse.jku.at/jobs"
+    MAX_PAGES = 20
+
+    @property
+    def name(self) -> str:
+        return "jku"
+
+    def fetch_jobs(self) -> list[Job]:
+        jobs: list[Job] = []
+        seen: set[str] = set()
+        for page in range(1, self.MAX_PAGES + 1):
+            url = self.JOBS_URL if page == 1 else f"{self.JOBS_URL}?page={page}"
+            try:
+                html = fetch_html(url)
+            except Exception:
+                break
+            batch = self._parse_jobs(html, seen)
+            if not batch:
+                break
+            jobs.extend(batch)
+        return cap_jobs(jobs)
+
+    def _parse_jobs(self, html: str, seen: set[str]) -> list[Job]:
+        soup = BeautifulSoup(html, "html.parser")
+        jobs = []
+        for card in soup.select(".jcl-job-teaser-content"):
+            link = card.select_one(".jcl-job-teaser-title a")
+            if not link:
+                continue
+            href = link.get("href", "")
+            if not href or href in seen:
+                continue
+            title = _normalize_ws(link.get_text(" ", strip=True))
+            if not is_valid_job_title(title):
+                continue
+            seen.add(href)
+            company_el = card.select_one(".jcl-job-teaser-company a")
+            company = _normalize_ws(company_el.get_text(" ", strip=True)) if company_el else ""
+            location = ""
+            loc_el = card.select_one(".jcl-job-teaser-location")
+            if loc_el:
+                for svg in loc_el.find_all("svg"):
+                    svg.decompose()
+                location = _normalize_ws(loc_el.get_text(" ", strip=True))
+            jobs.append(
+                Job(
+                    title=title,
+                    location=location,
+                    country="Austria" if re.search(r"österreich|austria", location, re.I) else "",
+                    category=_guess_category(title),
+                    experience_level="",
+                    source=self.name,
+                    company=company,
+                    url=build_url(self.BASE_URL, href),
+                )
+            )
+        return jobs

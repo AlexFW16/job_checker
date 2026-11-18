@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Job Checker Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taiwan Job Checker Dashboard</h1>
+            <p class="subtitle" id="last-check">Loading...</p>
+            <p><a class="nav-link" href="index.html">&larr; Austria dashboard</a></p>
+        </header>
+
+        <div class="stats" id="stats">
+            <div class="stat-card"><div class="label">Total Jobs</div><div class="value" id="stat-total">-</div></div>
+            <div class="stat-card"><div class="label">Matching</div><div class="value" id="stat-matching">-</div></div>
+            <div class="stat-card"><div class="label">New</div><div class="value new" id="stat-new">-</div></div>
+            <div class="stat-card"><div class="label">Sources</div><div class="value" id="stat-sources">-</div></div>
+        </div>
+
+        <div class="controls">
+            <input type="search" id="search" placeholder="Search title, company, location..." aria-label="Search jobs">
+            <input type="number" id="salary-min" placeholder="Min annual salary (TWD)" min="0" step="10000"
+                   title="Compares only salaries with an explicit monthly or annual period">
+            <select id="source-filter" aria-label="Filter by source"><option value="">All sources</option></select>
+            <select id="sort" aria-label="Sort jobs">
+                <option value="relevance">Sort: Best match</option>
+                <option value="newest">Sort: Newest first</option>
+                <option value="salary">Sort: Salary (high to low)</option>
+            </select>
+            <button class="filter-btn reset-btn" id="reset-filters" type="button">Reset filters</button>
+        </div>
+
+        <div class="filters" id="filters" aria-label="Job filters"></div>
+        <div class="results-info" id="results-info" aria-live="polite"></div>
+        <p class="salary-note">Salary comparison uses annualized values only when the posting states a month/year period.</p>
+        <div class="job-list" id="job-list"><div class="loading">Loading results...</div></div>
+    </div>
+
+    <script>
+        window.JOB_DASHBOARD_CONFIG = {
+            dataUrl: "results.taiwan.json",
+            currency: "TWD",
+            filters: {
+                all: "All",
+                new: "New",
+                taipei_area: "Taipei area",
+                taiwan: "Taiwan",
+                remote: "Remote",
+                junior: "Junior",
+                software: "Software/IT",
+                math: "Math/Data"
+            }
+        };
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
