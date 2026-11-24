@@ -141,10 +141,11 @@ inline dummy HTML/JSON/XML fixtures.
      only, to avoid description boilerplate and experience_level ("Entry level",
      "Vollzeit") false positives.
    - `graduate_tier` is one of `graduate` (a junior keyword or entry signal),
-     `possible`, or `excluded` (senior title or `required_years >=
-     graduate_filter.exclude_min_years`). **Seniority/explicit-years exclusions win**:
+     `possible`, or `excluded` (senior title, a `title_exclude` match, or `required_years >=
+     graduate_filter.exclude_min_years`). **Title, seniority and explicit-years exclusions win**:
      description boilerplate ("bachelor", "no experience required") can no longer
-     flip an explicitly senior role back to `graduate`.
+     flip an excluded role back to `graduate`. `title_exclude` removes
+      thesis/internship titles while keeping ordinary PhD roles eligible.
    - `is_relevant` is `domain_hit and tier != "excluded"`. `score` rewards graduate
      tier and domain keyword hits. `match_details` carries the three UI booleans
      (`is_junior_level`, `is_software_dev`, `is_math_related`) plus `score`,
@@ -309,7 +310,7 @@ Other feeds that DO work:
 
 - `config.json` controls behavior at runtime: keyword lists in `keywords`
   (`junior_level`, `software_dev`, `mathematics`), seniority rules in
-  `graduate_filter` (`exclude_min_years`, `seniority_exclude`,
+  `graduate_filter` (`exclude_min_years`, `title_exclude`, `seniority_exclude`,
   `seniority_downgrade`), location filters in `filters` (`countries`,
   `remote_worldwide`, `remote_eu`, `allow_eu_nearby`, `fetch_details`,
   `max_detail_fetches`), and the `scrapers` list.

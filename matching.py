@@ -561,6 +561,7 @@ class JobClassifier:
         self.mathematics = TermMatcher(keywords.get("mathematics", []))
 
         self.exclude_min_years = int(graduate.get("exclude_min_years", 4))
+        self.title_exclude = TermMatcher(graduate.get("title_exclude", []))
         self.seniority_exclude = TermMatcher(
             graduate.get("seniority_exclude", _SENIORITY_EXCLUDE_DEFAULT)
         )
@@ -587,6 +588,7 @@ class JobClassifier:
         junior_matches = list(
             dict.fromkeys(title_junior_matches + description_junior_matches)
         )
+        excluded_title_matches = self.title_exclude.find(job.title)
         senior_title_matches = self.seniority_exclude.find(job.title)
         downgrade_matches = self.seniority_downgrade.find(job.title)
 
@@ -596,10 +598,9 @@ class JobClassifier:
         strict_years = required_years is not None and required_years >= self.exclude_min_years
         seniority_excluded = bool(senior_title_matches) or strict_years
 
-        # Seniority and explicit-years exclusions are authoritative: generic
-        # description boilerplate ("bachelor", "no experience required") must not
-        # flip an explicitly senior role back to the graduate tier.
-        if seniority_excluded:
+        # Title, seniority and explicit-years exclusions are authoritative:
+        # generic junior signals must not bring thesis/intern or senior roles back.
+        if excluded_title_matches or seniority_excluded:
             tier = "excluded"
         elif junior_matches or experience["entry_signal"]:
             tier = "graduate"
@@ -633,7 +634,8 @@ class JobClassifier:
             "required_years": required_years,
             "experience_notes": experience["notes"],
             "excluded_reasons": (
-                (["seniority: " + ", ".join(senior_title_matches)] if senior_title_matches else [])
+                (["title exclusion: " + ", ".join(excluded_title_matches)] if excluded_title_matches else [])
+                + (["seniority: " + ", ".join(senior_title_matches)] if senior_title_matches else [])
                 + (["requires >= " + str(self.exclude_min_years) + " years"] if strict_years else [])
             ),
         }

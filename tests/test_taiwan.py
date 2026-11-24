@@ -210,10 +210,10 @@ class TestTaiwanClassifier:
         assert result["is_software_dev"] is True
         assert result["is_relevant"] is True
 
-    def test_chinese_intern_is_graduate(self):
+    def test_chinese_intern_is_excluded(self):
         result = self.classifier.classify(make_job("軟體實習生", category="it_software-engineer"))
-        assert result["graduate_tier"] == "graduate"
-        assert result["is_junior_level"] is True
+        assert result["graduate_tier"] == "excluded"
+        assert result["is_relevant"] is False
 
     def test_chinese_senior_excluded(self):
         result = self.classifier.classify(make_job("資深後端工程師", category="it_software-engineer"))

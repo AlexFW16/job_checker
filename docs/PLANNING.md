@@ -28,6 +28,7 @@ candidate. Priorities, in order:
 | 7a | Vienna / remote-EU coverage: GitLab Greenhouse, A1, Frequentis, Wien Energie | done |
 | 7b | Further source expansion (ÖBB, regional employers) | future |
 | 8 | Shared Austria/Taiwan dashboard: counts, AND search, reset, first-seen dates, explicit-period annual salary comparison | done |
+| 9 | Exclude thesis and internship/practical-placement titles in both regions; keep PhD positions eligible | done |
 
 ## New-job detection design (Phase 2)
 

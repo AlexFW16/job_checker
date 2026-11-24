@@ -216,6 +216,26 @@ DEFAULT_CONFIG = {
     },
     "graduate_filter": {
         "exclude_min_years": 4,
+        "title_exclude": [
+            "thesis",
+            "bachelor thesis",
+            "master thesis",
+            "bachelorarbeit",
+            "masterarbeit",
+            "diplomarbeit",
+            "studienarbeit",
+            "praktikum",
+            "praktikant",
+            "praktikanten",
+            "praktikantin",
+            "ferialpraktikum",
+            "ferialpraktikant",
+            "sommerpraktikum",
+            "intern",
+            "internship",
+            "實習",
+            "实习"
+        ],
         "seniority_exclude": [
             "senior",
             "sr",

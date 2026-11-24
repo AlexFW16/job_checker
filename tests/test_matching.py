@@ -1,3 +1,5 @@
+import pytest
+
 from config_loader import get_default_config
 from scrapers.base import Job
 from matching import (
@@ -434,6 +436,62 @@ class TestDefaultDomainMatching:
         result = JobClassifier(get_default_config()).classify(make_job("Staff Backend Engineer"))
         assert result["graduate_tier"] == "excluded"
         assert result["is_relevant"] is False
+
+
+class TestThesisAndPlacementExclusions:
+    @pytest.mark.parametrize(
+        "title",
+        [
+            "Master Thesis – Machine Learning",
+            "Bachelor Thesis – Artificial Intelligence",
+            "Bachelorarbeit – Datenanalyse",
+            "Masterarbeit – Softwareentwicklung",
+            "Diplomarbeit – Software Engineering",
+            "Studienarbeit – Machine Learning",
+        ],
+    )
+    def test_thesis_titles_are_excluded(self, title):
+        result = JobClassifier(get_default_config()).classify(make_job(title))
+        assert result["graduate_tier"] == "excluded"
+        assert result["is_relevant"] is False
+        assert any("title exclusion" in reason for reason in result["excluded_reasons"])
+
+    @pytest.mark.parametrize(
+        "title",
+        [
+            "Praktikum Softwareentwicklung",
+            "Praktikant Software Engineering",
+            "Software Engineering Intern",
+            "AI Internship",
+            "Ferialpraktikum Softwareentwicklung",
+        ],
+    )
+    def test_practical_placement_titles_are_excluded(self, title):
+        result = JobClassifier(get_default_config()).classify(make_job(title))
+        assert result["graduate_tier"] == "excluded"
+        assert result["is_relevant"] is False
+
+    @pytest.mark.parametrize(
+        "title",
+        [
+            "PhD / Data Scientist in Quantum AI (m/f/x)",
+            "PhD Researcher – Machine Learning",
+        ],
+    )
+    def test_phd_titles_remain_eligible(self, title):
+        result = JobClassifier(get_default_config()).classify(make_job(title))
+        assert result["graduate_tier"] != "excluded"
+        assert result["is_relevant"] is True
+
+    def test_exclusions_use_title_not_description(self):
+        result = JobClassifier(get_default_config()).classify(
+            make_job(
+                "Junior Software Engineer",
+                description="We also support bachelor and master thesis projects and internships.",
+            )
+        )
+        assert result["is_relevant"] is True
+        assert result["graduate_tier"] == "graduate"
 
 
 class TestDefaultExperiencePolicy:
